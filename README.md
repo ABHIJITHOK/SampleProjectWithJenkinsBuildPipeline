@@ -34,5 +34,11 @@ git commit
 You can create an inline link by wrapping link in brackets [], and then wrapping the URL in parenthesis ()
 This site was built using [GitHub Pages](https://pages.github.com/).
 
+### Relative Links
+You can define relative links and image paths in your rendered files to help readers navigate to other files in your repository.
+A relative link is a link relative to the current file. 
+For example, if you have a README file in root of your repository, and you have another file in docs/CONTRIBUTING.md, 
+the relative link to CONTRIBUTING.md in your README might look like this:
+[Contribution guidelines for this project](ConsoleApp2/ConsoleApp2Readme.md)
 
 Abhy help documents here
