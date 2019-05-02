@@ -88,6 +88,20 @@ People will also receive a notification if you edit a comment to mention their u
 
 Abhy help documents here
 
-### Logo
+### Logo2
 ![Alt text](docs/TABLogo.jpg?raw=true "Tab Logo final")
+
+## Table of contents
+:toc: macro
+:toc-title:
+:toclevels: 99
+# Title
+
+## A
+
+### A2
+
+## B
+
+### B2
 
