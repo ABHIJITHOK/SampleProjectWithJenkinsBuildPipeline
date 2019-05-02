@@ -89,5 +89,5 @@ People will also receive a notification if you edit a comment to mention their u
 Abhy help documents here
 
 ### Logo
-![alt text](https://github.com/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/blob/master/docs/TABLogo.jpg)
+![Alt text](docs/TABLogo.jpg?raw=true "Tab Logo final")
 
