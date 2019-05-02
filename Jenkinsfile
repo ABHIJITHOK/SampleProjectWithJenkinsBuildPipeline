@@ -12,7 +12,5 @@ pipeline {
             }
         }
 
-		stage 'Archive'
-			archive 'MyConsoleApp1/bin/Release/**'
     }
 }
