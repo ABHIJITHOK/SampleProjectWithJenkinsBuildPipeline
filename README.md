@@ -75,7 +75,11 @@ To create a Task List, preface list items with a regular space character followe
 If a task list item description begins with a parenthesis, you'll need to escape it with \:
 - [ ] \(Optional) Open a followup issue
 
-
+### Mentioning people and teams
+You can mention a person or team on GitHub by typing @ plus their username or team name. 
+This will trigger a notification and bring their attention to the conversation. 
+People will also receive a notification if you edit a comment to mention their username or team name.
+@Abhy.Kizhakkepat What do you think about these updates
 
 
 
