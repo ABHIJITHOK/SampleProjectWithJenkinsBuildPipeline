@@ -9,6 +9,9 @@
 ### Italic text
 *This is italic text*
 
+### Paragraphs and line breaks
+You can create a new paragraph by leaving a blank line between lines of text.
+
 ### Strikethrough text
 ~~This is Strikethrough (mistaken) text~~
 
@@ -20,8 +23,10 @@ In the words of Abraham Lincoln:
 > Pardon my French
 
 ### Quoting code:
+
 #### You can call out code or a command within a sentence with single backticks. The text within the backticks will not be formatted.
 Use `git status` to list all new or modified files that haven't yet been committed.
+
 #### To format code or text into its own distinct block, use triple backticks.
 Some basic Git commands are:
 ```
@@ -80,9 +85,5 @@ You can mention a person or team on GitHub by typing @ plus their username or te
 This will trigger a notification and bring their attention to the conversation. 
 People will also receive a notification if you edit a comment to mention their username or team name.
 @ABHIJITHOK What do you think about these updates?
-
-
-
-
 
 Abhy help documents here
