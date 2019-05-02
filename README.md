@@ -67,4 +67,18 @@ until the list marker character (- or *) lies directly below the first character
    - Second nested list item
      - Subitem
 
+### Task Lists
+To create a Task List, preface list items with a regular space character followed by [ ]. To mark a tak as complete, use [x].
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
+If a task list item description begins with a parenthesis, you'll need to escape it with \:
+- [ ] \(Optional) Open a followup issue
+
+
+
+
+
+
+
 Abhy help documents here
