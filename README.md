@@ -30,4 +30,9 @@ git add
 git commit
 ```
 
+### Links
+You can create an inline link by wrapping link in brackets [], and then wrapping the URL in parenthesis ()
+This site was built using [GitHub Pages](https://pages.github.com/).
+
+
 Abhy help documents here
