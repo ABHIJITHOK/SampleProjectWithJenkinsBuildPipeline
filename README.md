@@ -41,4 +41,17 @@ For example, if you have a README file in root of your repository, and you have 
 the relative link to CONTRIBUTING.md in your README might look like this:
 [Contribution guidelines for this project](docs/ConsoleApp2Readme.md)
 
+### Lists
+You can make an unordered list by preceding one or more lines of text with - or *.
+- George Washington
+- John Adams
+- Thomas Jefferson
+
+
+### Ordered Lists
+To order your list, precede each line with a number.
+1. George Washington
+3. John Adams
+2. Thomas Jefferson
+
 Abhy help documents here
