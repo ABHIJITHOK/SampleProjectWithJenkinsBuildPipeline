@@ -7,9 +7,13 @@ pipeline {
 
 		stage('Build') {
             steps {
-				bat 'echo Hi Abhy'
 				bat 'nuget restore SampleProjectWithJenkinsBuildPipeline.sln'
 				bat "\"${tool 'MSBuild'}\" SampleProjectWithJenkinsBuildPipeline.sln"
+            }
+
+		stage('Test') {
+            steps {
+				bat "\"${tool 'VSTest'}\" SampleProjectWithJenkinsBuildPipeline.sln"
             }
         }
 

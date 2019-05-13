@@ -3,6 +3,21 @@
 ##### The second smallest heading
 ###### The smallest heading
 
+## Table of contents
+1. [ Description. ](#desc)
+2. [ Usage tips. ](#usage)
+
+<a name="desc"></a>
+## 1. Description
+
+sometext
+
+<a name="usage"></a>
+## 2. Usage tips
+
+sometext
+
+
 ### Bold text
 **This is bold text**
 
@@ -91,17 +106,4 @@ Abhy help documents here
 ### Logo2
 ![Alt text](docs/TABLogo.jpg?raw=true "Tab Logo final")
 
-## Table of contents
-1. [ Description. ](#desc)
-2. [ Usage tips. ](#usage)
-
-<a name="desc"></a>
-## 1. Description
-
-sometext
-
-<a name="usage"></a>
-## 2. Usage tips
-
-sometext
 
