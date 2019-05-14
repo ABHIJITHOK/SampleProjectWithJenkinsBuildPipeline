@@ -6,7 +6,7 @@
  stages {
   stage('Checkout') {
    steps {
-    git credentialsId: 'ABHIJITHOK', url: 'https://github.com/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline', branch: 'master'
+    git credentialsId: 'AbhyKizhakkepat', url: 'https://github.com/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline', branch: 'master'
    }
   }
  }
