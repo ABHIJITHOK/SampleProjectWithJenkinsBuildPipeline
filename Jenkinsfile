@@ -10,6 +10,7 @@ pipeline {
 		stage('Build') {
             steps {
                 bat 'dotnet help'
+				bat 'dotnet build --configuration Release'
             }
         }
     }
