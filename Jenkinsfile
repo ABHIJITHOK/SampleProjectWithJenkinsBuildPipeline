@@ -1,7 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage 'Checkout'
+			checkout scm
+		
+		stage('Build') {
             steps {
                 bat 'dotnet help'
             }
