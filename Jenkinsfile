@@ -3,7 +3,7 @@
     stages {
         stage('Build') {
             steps {
-                bat 'msbuild /help'
+                bat 'dotnet help'
             }
         }
     }
