@@ -1,8 +1,11 @@
 pipeline {
-    agent any
+    
+	agent any
+	
 	parameters {
 		string(name: 'fullyQualifiedName', defaultValue: 'TestMethod1', description: 'Test Case Name.')
 	}
+
     stages {
         stage ('Checkout') {
 			steps {
@@ -40,24 +43,25 @@ pipeline {
 			}
 		}
 
-		post {
-        always {
-            echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
-        }
-        success {
-            echo 'I succeeeded!'
-        }
-        unstable {
-            echo 'I am unstable :/'
-        }
-        failure {
-            echo 'I failed :('
-        }
-        changed {
-            echo 'Things were different before...'
-        }
     }
 
-    }
+	post {
+		always {
+				echo 'One way or another, I have finished'
+				deleteDir() /* clean up our workspace */
+		}
+		success {
+				echo 'I succeeeded!'
+		}
+		unstable {
+				echo 'I am unstable :/'
+		}
+		failure {
+				echo 'I failed :('
+		}
+		changed {
+				echo 'Things were different before...'
+		}
+	}
+
 }
