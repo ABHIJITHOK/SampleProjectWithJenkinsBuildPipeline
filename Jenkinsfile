@@ -32,11 +32,12 @@ pipeline {
 			steps {
 				script {
 					def currentDate = powershell(returnStdout: true, script: 'Get-Date -UFormat "%Y-%m-%d"')
-					def fullyQualifiedName = 'TestMethod1'
+					def testCaseFilter = 'TestMethod1'
 					println currentDate
+					println testCaseFilter
 					def status = powershell(returnStatus:true, script: 
 						"""
-							dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --TestCaseFilter:"(Name=$fullyQualifiedName)" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\$currentDate\\SampleTestResults_$fullyQualifiedName.trx"
+							dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --TestCaseFilter:"(Name=$testCaseFilter)" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\$currentDate\\SampleTestResults_$testCaseFilter.trx"
 						""")
 					if(status == 0)
 					{
