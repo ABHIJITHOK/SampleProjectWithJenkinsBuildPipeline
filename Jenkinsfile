@@ -44,7 +44,6 @@ pipeline {
 					$testCaseFilter = 'TestMethod2'
 					Write-Host 'Starting test execution.'
 					dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --TestCaseFilter:"(Name=${testCaseFilter})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${testCaseFilter}.trx"
-					               C:\Users\Abhy.Kizhakkepat\.jenkins\workspace\AbhyDotNetCorePipeline14May2019
 					Write-Host 'Finished test execution.'
 				'''
 
