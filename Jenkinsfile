@@ -34,7 +34,7 @@ pipeline {
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod1'
 					Write-Host 'Starting test execution.'
-					dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_Blah.trx"
+					dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --TestCaseFilter:"(Name=${testCaseFilter})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${testCaseFilter}.trx"
 					Write-Host 'Finished test execution.'
 				'''
 			}
