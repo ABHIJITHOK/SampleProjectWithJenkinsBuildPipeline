@@ -36,7 +36,7 @@ pipeline {
 					println currentDate
 					println testCaseFilter
 					println 'Executing test'
-					powershell  dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\$currentDate\\SampleTestResults_Blah.trx"
+					powershell  'dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\$currentDate\\SampleTestResults_Blah.trx"'
 					println 'Finished executing test'
 				}
 			
