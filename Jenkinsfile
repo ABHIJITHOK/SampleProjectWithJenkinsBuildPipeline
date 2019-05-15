@@ -13,7 +13,6 @@ pipeline {
 			}
 		}
 
-		/*
 		stage('Restore PACKAGES') {
 			steps {
 				powershell "dotnet restore"
@@ -28,11 +27,12 @@ pipeline {
 				'''
             }
         }
-		*/
 
 		stage('Run Tests') {
 			steps {
 				powershell '''
+					$VAR_A = 'test'
+					Write-Host "My result: '$VAR_A'"	
 					$currentLocation = Get-Location
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
