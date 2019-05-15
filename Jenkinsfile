@@ -35,14 +35,9 @@ pipeline {
 					def testCaseFilter = 'TestMethod1'
 					println currentDate
 					println testCaseFilter
-					def status = powershell(returnStatus:true, script: 
-						"""
-							dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\$currentDate\\SampleTestResults_Blah.trx"
-						""")
-					if(status == 0)
-					{
-						println "Success!"
-					}
+					println 'Executing test'
+					powershell  dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\$currentDate\\SampleTestResults_Blah.trx"
+					println 'Finished executing test'
 				}
 			
 			}
