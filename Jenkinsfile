@@ -45,6 +45,7 @@ pipeline {
 
     }
 
+	/*Cleaning up and notifications*/
 	post {
 		always {
 				echo 'One way or another, I have finished'
