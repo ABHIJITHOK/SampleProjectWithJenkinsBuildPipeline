@@ -31,8 +31,8 @@ pipeline {
 		stage('Test') {
 			steps {
 				script {
-					powershell '$currentDate = Get-Date -format "yyyy-MM-dd"'
-					powershell 'Write-Output $currentDate'
+					def currentDate = powershell(returnStdout: true, script: " & 'Get-Date -format "yyyy-MM-dd"'")
+					println currentDate
 					powershell 'dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --TestCaseFilter:"(Name=%fullyQualifiedName%)" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${todayDate}\\SampleTestResults_%fullyQualifiedName%.trx"'
 				}
 			
