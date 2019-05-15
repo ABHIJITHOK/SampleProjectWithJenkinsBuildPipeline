@@ -34,7 +34,6 @@ pipeline {
 		stage('Test') {
 			steps {
 				echo "Workspace is ${env.WORKSPACE}"
-				def myWorskSpace = '${env.WORKSPACE}'
 				
 				powershell '''
 					$currentWorkSpace = ${env.WORKSPACE}
