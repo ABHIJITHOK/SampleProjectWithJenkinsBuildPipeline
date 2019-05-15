@@ -38,7 +38,7 @@ pipeline {
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
 					Write-Host 'Starting test execution.'
-					# dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${env:fullyQualifiedName})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${env:fullyQualifiedName}.trx"
+					dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${env:fullyQualifiedName})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${env:fullyQualifiedName}.trx"
 					Write-Host 'Finished test execution.'
 				'''
 			}
