@@ -38,6 +38,7 @@ pipeline {
 				}				
 				
 				powershell '''
+
 					$currentLocation = Get-Location
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
