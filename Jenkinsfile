@@ -34,8 +34,8 @@ pipeline {
 		stage('Test') {
 			steps {
 				echo "Workspace is ${env.WORKSPACE}"
-				def myWorskSpace = ${env.WORKSPACE}
-				powershell Write-Host 'My workspace is ${myWorkSpace}'
+				def myWorskSpace = '${env.WORKSPACE}'
+				powershell Write-Host 'My workspace is ${env.WORKSPACE}'
 				powershell '''
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
