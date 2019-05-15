@@ -4,7 +4,6 @@ pipeline {
 	
 	parameters {
 		string(name: 'fullyQualifiedName', defaultValue: 'TestMethod1', description: 'Test Case Name.')
-		string(name: 'someotherparam', defaultValue: 'somevalue', description: 'Test Case Name.')
 	}
 
     stages {
@@ -14,6 +13,7 @@ pipeline {
 			}
 		}
 
+		/*
 		stage('Restore PACKAGES') {
 			steps {
 				powershell "dotnet restore"
@@ -28,16 +28,16 @@ pipeline {
 				'''
             }
         }
+		*/
 
 		stage('Run Tests') {
 			steps {
 				powershell '''
-
 					$currentLocation = Get-Location
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
-					Write-Host 'Starting test execution.'					
-					dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${testCaseFilter})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${testCaseFilter}.trx"
+					Write-Host 'Starting test execution.'
+					//dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${testCaseFilter})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${testCaseFilter}.trx"
 					Write-Host 'Finished test execution.'
 				'''
 			}
