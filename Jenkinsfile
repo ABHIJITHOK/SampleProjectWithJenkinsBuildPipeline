@@ -2,10 +2,6 @@ pipeline {
     
 	agent any
 	
-	parameters {
-		string(name: 'fullyQualifiedName', defaultValue: 'TestMethod1', description: 'Test Case Name.')
-	}
-
     stages {
         stage ('Checkout') {
 			steps {
@@ -32,13 +28,14 @@ pipeline {
 			steps {
 				powershell '''
 					$VAR_A = 'test'
+					$fullyQualifiedName = 'TestMethod1'
 					Write-Host "My result: '$VAR_A'"	
-					Write-Host "Test Name: ${env:fullyQualifiedName}"
+					Write-Host "Test Name: '$fullyQualifiedName'"
 					$currentLocation = Get-Location
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
 					Write-Host 'Starting test execution.'
-					dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${env:fullyQualifiedName})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${env:fullyQualifiedName}.trx"
+					dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${fullyQualifiedName})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${fullyQualifiedName}.trx"
 					Write-Host 'Finished test execution.'
 				'''
 			}
