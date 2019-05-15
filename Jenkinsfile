@@ -33,12 +33,6 @@ pipeline {
 
 		stage('Test') {
 			steps {
-				echo "Workspace is ${env.WORKSPACE}"
-				
-				powershell '''
-					Write-Host "My workspace is '${env:WORKSPACE}'"
-				'''
-				
 				powershell '''
 					$currentLocation = Get-Location
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
@@ -47,7 +41,6 @@ pipeline {
 					dotnet vstest "${currentLocation}\\UnitTestProject1\\bin\\Release\\netcoreapp2.1\\UnitTestProject1.dll" --TestCaseFilter:"(Name=${testCaseFilter})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${testCaseFilter}.trx"
 					Write-Host 'Finished test execution.'
 				'''
-
 			}
 		}
 
@@ -57,7 +50,7 @@ pipeline {
 	post {
 		always {
 				echo 'One way or another, I have finished'
-				/*deleteDir() clean up our workspace */
+				deleteDir() clean up our workspace */
 		}
 		success {
 				echo 'I succeeeded!'
