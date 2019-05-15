@@ -31,12 +31,6 @@ pipeline {
 
 		stage('Run Tests') {
 			steps {
-				script {
-					echo "Workspace is '$env:WORKSPACE'"
-					echo "Test Case Name is '$param:fullyQualifiedName'"
-					echo "Some other param is '$param:someotherparam'"
-				}				
-				
 				powershell '''
 
 					$currentLocation = Get-Location
