@@ -33,6 +33,11 @@ pipeline {
 
 		stage('Test') {
 			steps {
+				bat 'set > env.txt' 
+					for (String i : readFile('env.txt').split("\r?\n")) {
+						println i
+					}
+				
 				powershell '''
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
@@ -42,6 +47,7 @@ pipeline {
 					dotnet vstest "C:/Git/ABHIJITHOK/SampleProjectWithJenkinsBuildPipeline/UnitTestProject1/bin/Debug/netcoreapp2.1/UnitTestProject1.dll" --TestCaseFilter:"(Name=${testCaseFilter})" --logger:"trx;LogFileName=C:\\wagering\\tote\\test\\logs\\${currentDate}\\SampleTestResults_${testCaseFilter}.trx"
 					Write-Host 'Finished test execution.'
 				'''
+
 			}
 		}
 
