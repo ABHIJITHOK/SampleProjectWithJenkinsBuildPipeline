@@ -36,8 +36,7 @@ pipeline {
 				echo "Workspace is ${env.WORKSPACE}"
 				
 				powershell '''
-					$currentWorkSpace = ${env.WORKSPACE}
-					Write-Host 'My workspace is ${currentWorkSpace}'
+					Write-Host "My workspace is '${env:WORKSPACE}'"
 				'''
 				
 				powershell '''
