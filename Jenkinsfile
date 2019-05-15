@@ -31,7 +31,7 @@ pipeline {
 		stage('Run Tests') {
 			steps {
 				script {
-					echo 'Workspace is $env:WORKSPACE'
+					echo "Workspace is '$env:WORKSPACE'""
 				}				
 				
 				powershell '''
