@@ -19,19 +19,16 @@ pipeline {
 			}
 		}
 
-		stage('Clean') {
-			steps {
-				powershell 'dotnet clean'
-			}
-		}
-
-		stage('Build') {
+		stage('Clean and Build') {
             steps {
-				powershell 'dotnet build --configuration Release'
+				powershell '''
+					dotnet clean
+					dotnet build --configuration Release
+				'''
             }
         }
 
-		stage('Test') {
+		stage('Run Tests') {
 			steps {
 				powershell '''
 					$currentLocation = Get-Location
