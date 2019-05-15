@@ -33,8 +33,8 @@ pipeline {
 			steps {
 				script {
 					echo "Workspace is '$env:WORKSPACE'"
-					echo "Test Case Name is '$params:fullyQualifiedName'"
-					echo "Some other param is '$params:someotherparam'"
+					echo "Test Case Name is '$param:fullyQualifiedName'"
+					echo "Some other param is '$param:someotherparam'"
 				}				
 				
 				powershell '''
