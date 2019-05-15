@@ -33,6 +33,7 @@ pipeline {
 				powershell '''
 					$VAR_A = 'test'
 					Write-Host "My result: '$VAR_A'"	
+					Write-Host "Test Name: ${env:fullyQualifiedName}"
 					$currentLocation = Get-Location
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
