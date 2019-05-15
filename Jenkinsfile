@@ -41,7 +41,7 @@ pipeline {
 				
 				powershell '''
 					Get-Location
-					Get-ChildItem -Path C:\Test
+					Get-ChildItem
 					$currentDate = Get-Date -UFormat "%Y-%m-%d"
 					$testCaseFilter = 'TestMethod2'
 					Write-Host 'Starting test execution.'
