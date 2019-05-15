@@ -4,6 +4,7 @@ pipeline {
 	
 	parameters {
 		string(name: 'fullyQualifiedName', defaultValue: 'TestMethod1', description: 'Test Case Name.')
+		string(name: 'someotherparam', defaultValue: 'somevalue', description: 'Test Case Name.')
 	}
 
     stages {
@@ -33,6 +34,7 @@ pipeline {
 				script {
 					echo "Workspace is '$env:WORKSPACE'"
 					echo "Test Case Name is '$params:fullyQualifiedName'"
+					echo "Some other param is '$params:someotherparam'"
 				}				
 				
 				powershell '''
