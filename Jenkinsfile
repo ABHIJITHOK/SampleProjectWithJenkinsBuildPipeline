@@ -34,7 +34,7 @@ pipeline {
 		stage('Test') {
 			steps {
 				bat '''
-				    set > env.txt
+				    'set > env.txt'
 					for (String i : readFile('env.txt').split("\r?\n")) {
 						println i
 					}
