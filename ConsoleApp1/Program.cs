@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -16,6 +17,7 @@ namespace ConsoleApp1
 
         public static void Main(string[] args)
         {
+            var response = new HttpResponseMessage();
             cookieContainer = new CookieContainer();
             clientHandler = new HttpClientHandler
             {
@@ -35,13 +37,22 @@ namespace ConsoleApp1
                     };
                 var encodedContent = new FormUrlEncodedContent(parameters);
                 System.Net.ServicePointManager.Expect100Continue = false;
-                var response = client.PostAsync("job/AbhyDotNetCorePipeline14May2019/build", encodedContent).Result;
+                response = client.PostAsync("job/AbhyDotNetCorePipeline14May2019/build", encodedContent).Result;
             }
             catch (Exception e1)
             {
                 Console.WriteLine(e1.Message);
                 throw;
             }
+
+            if(response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Successfully triggerred the Jenkins build. \n\n{JsonConvert.SerializeObject(response, Formatting.Indented)}");
+            }
+            else
+            {
+                Console.WriteLine($"Failed to trigger the Jenkins build.");
+            }            
         }
     }
 }
